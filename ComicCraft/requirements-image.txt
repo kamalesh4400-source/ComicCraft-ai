@@ -1,0 +1,6 @@
+# Optional local Stable Diffusion / Diffusers support.
+torch>=2.2,<3
+diffusers>=0.30,<0.41
+transformers>=4.40,<5
+accelerate>=0.30,<2
+safetensors>=0.4,<1
