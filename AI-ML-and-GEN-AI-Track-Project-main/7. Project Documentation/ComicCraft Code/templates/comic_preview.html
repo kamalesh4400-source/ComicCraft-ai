@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block title %}Comic Preview - ComicCraft{% endblock %}
-{% block content %}
-<section class="hero"><span class="badge">YOUR COMIC</span><h1>Comic Preview</h1><p>Your five-panel story has been generated.</p><a class="btn btn-primary" href="{{ pdf_url }}" download>Download Your Comic as PDF</a></section>
-<section class="panel-list">
-{% for panel in layout %}<article class="panel-card"><h2>Panel {{ panel.panel_number }}: {{ panel.title }}</h2><img src="/{{ panel.image_path.lstrip('/') }}" alt="Panel {{ panel.panel_number }}"><div class="panel-text"><p class="scene"><em>{{ panel.scene_description }}</em></p>{% if panel.caption %}<p><strong>Caption:</strong> {{ panel.caption }}</p>{% endif %}{% if panel.narration %}<p><strong>Narration:</strong> {{ panel.narration }}</p>{% endif %}{% if panel.dialogue %}<p><strong>Dialogue:</strong> {{ panel.dialogue }}</p>{% endif %}<details><summary>Image prompt</summary><p>{{ panel.image_prompt }}</p></details></div></article>{% endfor %}
-</section>
-<section class="center-actions"><a class="btn btn-secondary" href="/">Create Another Comic</a></section>
-{% endblock %}
